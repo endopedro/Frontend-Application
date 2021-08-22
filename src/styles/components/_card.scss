@@ -1,0 +1,17 @@
+.card {
+  background-color: $white;
+  box-shadow: $shadow;
+  border-radius: $border-radius;
+  margin-bottom: 1rem;
+  overflow: hidden;
+
+  .card-header {
+    padding: 0.5rem 1rem;
+    background-color: $primary;
+    color: $white;
+  }
+
+  .card-body {
+    padding: 1rem;
+  }
+}

@@ -34,8 +34,8 @@ const ProductContent = ({ categories, businessModels, description, trl }) => {
               <div className="information">
                 <span className="label">Business Models:</span>
                 <span className="text">
-                  {businessModels.map((model, i) => {
-                    if (i + 1 == businessModels?.length) return model.name
+                  {businessModels?.map((model, i) => {
+                    if (i + 1 == businessModels.length) return model.name
                     else return `${model.name}, `
                   })}
                 </span>

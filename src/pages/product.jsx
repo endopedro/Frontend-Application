@@ -6,6 +6,7 @@ import ProductPicture from '../domain/product/ProductPicture'
 import ProductMainInfo from '../domain/product/ProductMainInfo'
 import ProductContent from '../domain/product/ProductContent'
 import ProductUser from '../domain/product/ProductUser'
+import ProductMap from '../domain/product/ProductMap'
 
 const ProductPage = () => {
   const product = useSelector((state) => state.product.data)
@@ -20,6 +21,7 @@ const ProductPage = () => {
         </div>
         <div className="side-info">
           <ProductUser user={product?.user} company={product?.company} />
+          <ProductMap company={product?.company} />
         </div>
       </div>
     </Layout>

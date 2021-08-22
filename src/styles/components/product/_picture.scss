@@ -1,0 +1,15 @@
+.product-picture {
+  height: 220px;
+  margin-bottom: 1rem;
+  border-radius: $border-radius;
+  overflow: hidden;
+  border: $primary 1px solid;
+  width: 100%;
+  box-shadow: $shadow;
+
+  img {
+    object-fit: contain;
+    height: 100%;
+    width: 100%;
+  }
+}

@@ -1,9 +1,13 @@
 @import 'abstracts/functions';
 @import 'abstracts/variables';
 
-@import './base/global';
-@import './base/typography';
+@import 'base/global';
+@import 'base/typography';
 
 @import 'layout/topbar';
 @import 'layout/sidebar';
 @import 'layout/page';
+
+@import 'pages/product';
+
+@import 'components/product/picture';

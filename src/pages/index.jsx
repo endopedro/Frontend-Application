@@ -1,8 +1,12 @@
 import React from 'react'
 import Layout from '../components/Layout'
 
-const Home = () => {
-  return <Layout title="Main">Main Page</Layout>
+const MainPage = () => {
+  return (
+    <Layout title="Main">
+      <div className="page">Main Page</div>
+    </Layout>
+  )
 }
 
-export default Home
+export default MainPage

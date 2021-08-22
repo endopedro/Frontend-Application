@@ -1,8 +1,19 @@
 import React from 'react'
-import Layout from '../components/Layout'
+import { useSelector } from 'react-redux'
 
-const product = () => {
-  return <Layout title="Product">Product Page</Layout>
+import Layout from '../components/Layout'
+import ProductPicture from '../domain/product/ProductPicture'
+
+const ProductPage = () => {
+  const product = useSelector((state) => state.product.data)
+
+  return (
+    <Layout title="Product">
+      <div className="page product-page">
+        <ProductPicture picture={product?.picture} />
+      </div>
+    </Layout>
+  )
 }
 
-export default product
+export default ProductPage

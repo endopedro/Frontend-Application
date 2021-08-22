@@ -1,6 +1,10 @@
 import axios from 'axios'
 
-const api = axios.create({ baseURL: 'https://api-test.innoloft.com' })
+const baseURL = process.env.API_URL
+  ? process.env.API_URL
+  : 'https://api-test.innoloft.com'
+
+const api = axios.create({ baseURL: baseURL })
 
 const apiHelpers = () => ({
   getProduct: (id) => api.get(`product/${id}/`),

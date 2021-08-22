@@ -3,6 +3,7 @@ import { configureStore } from '@reduxjs/toolkit'
 
 import configSlice from './config/slice'
 import productSlice from './product/slice'
+import trlSlice from './trl/slice'
 
 let store
 
@@ -11,6 +12,7 @@ const createStore = (preloadedState) => {
     reducer: {
       config: configSlice.reducer,
       product: productSlice.reducer,
+      trl: trlSlice.reducer,
     },
     preloadedState,
   })

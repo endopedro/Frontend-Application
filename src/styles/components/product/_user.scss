@@ -1,0 +1,11 @@
+.user-info {
+  text-align: center;
+
+  .avatar {
+    height: 100px;
+    width: 100px;
+    border-radius: $border-radius-circle;
+    object-fit: cover;
+    margin-bottom: 0.5rem;
+  }
+}

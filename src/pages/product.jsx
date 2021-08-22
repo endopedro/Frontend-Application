@@ -5,6 +5,7 @@ import Layout from '../components/Layout'
 import ProductPicture from '../domain/product/ProductPicture'
 import ProductMainInfo from '../domain/product/ProductMainInfo'
 import ProductContent from '../domain/product/ProductContent'
+import ProductUser from '../domain/product/ProductUser'
 
 const ProductPage = () => {
   const product = useSelector((state) => state.product.data)
@@ -16,6 +17,9 @@ const ProductPage = () => {
           <ProductPicture picture={product?.picture} />
           <ProductMainInfo name={product?.name} type={product?.type.name} />
           <ProductContent {...product} />
+        </div>
+        <div className="side-info">
+          <ProductUser user={product?.user} company={product?.company} />
         </div>
       </div>
     </Layout>

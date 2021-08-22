@@ -34,8 +34,10 @@ const Layout = ({ children, title }) => {
       </Head>
       <main>
         <Topbar />
-        <Sidebar page={title} />
-        {children}
+        <div className="container">
+          <Sidebar page={title} />
+          <div className="page">{children}</div>
+        </div>
       </main>
     </>
   )

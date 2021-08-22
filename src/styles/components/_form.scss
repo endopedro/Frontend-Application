@@ -1,0 +1,18 @@
+input[type=text], select {
+  width: 100%;
+  margin: 0.35rem 0;
+  display: inline-block;
+  border: 1px solid $gray;
+  box-shadow: inset $shadow;
+  border-radius: $border-radius;
+  box-sizing: border-box;
+  padding: 12px 20px;
+  transition: 0.2s;
+  background-color: $white;
+
+  &:focus-visible {
+    outline: none;
+    border: 1px solid $primary;
+    border-radius: $border-radius;
+  }
+}

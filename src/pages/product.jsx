@@ -13,17 +13,21 @@ const ProductPage = () => {
 
   return (
     <Layout title="Product">
-      <div className="page product-page">
-        <div className="product-info">
-          <ProductPicture picture={product?.picture} />
-          <ProductMainInfo name={product?.name} type={product?.type.name} />
-          <ProductContent {...product} />
+      {product ? (
+        <div className="page product-page">
+          <div className="product-info">
+            <ProductPicture picture={product?.picture} />
+            <ProductMainInfo name={product?.name} type={product?.type.name} />
+            <ProductContent {...product} />
+          </div>
+          <div className="side-info">
+            <ProductUser user={product?.user} company={product?.company} />
+            <ProductMap company={product?.company} />
+          </div>
         </div>
-        <div className="side-info">
-          <ProductUser user={product?.user} company={product?.company} />
-          <ProductMap company={product?.company} />
-        </div>
-      </div>
+      ) : (
+        <></>
+      )}
     </Layout>
   )
 }

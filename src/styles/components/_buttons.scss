@@ -1,0 +1,29 @@
+.btn {
+  border: none;
+  color: $white;
+  padding: 0.65rem 1.25rem;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1rem;
+  border-radius: $border-radius;
+  font-weight: bold;
+  cursor: pointer;
+
+  &.primary {
+    background-color: $primary;
+  }
+
+  &.cancel {
+    background-color: $dark-gray;
+  }
+
+  &:hover {
+    opacity: 0.95;
+  }
+
+  &:active {
+    transform: translateY(2px);
+    box-shadow: $shadow;
+  }
+}

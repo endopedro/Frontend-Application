@@ -1,0 +1,16 @@
+.content {    
+  .information {
+    .label {
+      font-weight: bold;
+      margin-right: 0.25rem;
+    }
+  
+    .text {
+      color: $dark-gray;
+    }
+  
+    &:not(:last-child) {
+      margin-bottom: 0.5rem;
+    }
+  }  
+}

@@ -4,6 +4,7 @@ import { useSelector } from 'react-redux'
 import Layout from '../components/Layout'
 import ProductPicture from '../domain/product/ProductPicture'
 import ProductMainInfo from '../domain/product/ProductMainInfo'
+import ProductContent from '../domain/product/ProductContent'
 
 const ProductPage = () => {
   const product = useSelector((state) => state.product.data)
@@ -14,6 +15,7 @@ const ProductPage = () => {
         <div className="product-info">
           <ProductPicture picture={product?.picture} />
           <ProductMainInfo name={product?.name} type={product?.type.name} />
+          <ProductContent {...product} />
         </div>
       </div>
     </Layout>

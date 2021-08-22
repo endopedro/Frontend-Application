@@ -1,0 +1,33 @@
+.tabs {
+  .tab-list {
+    width: 100%;
+    border-radius: $border-radius;
+    overflow: hidden;
+    display: flex;
+    border: 1px solid $primary;
+    color: $primary;
+    margin-bottom: 1rem;
+    font-weight: 500;
+  }
+
+  .tab {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: 0.2s;
+    padding: 0.5rem 0;
+
+    &.selected {
+      background-color: $primary;
+      color: $white;
+    }
+  }
+
+  .tab-content {
+    border: $light-gray 1px solid;
+    border-radius: $border-radius;
+    padding: 1rem;
+  }
+}

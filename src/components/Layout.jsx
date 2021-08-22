@@ -24,6 +24,8 @@ const Layout = ({ children, title }) => {
   console.log(product)
   console.log(trl)
 
+  if (!config) return <></>
+
   return (
     <>
       <Head>
@@ -32,7 +34,7 @@ const Layout = ({ children, title }) => {
       </Head>
       <main>
         <Topbar />
-        <Sidebar />
+        <Sidebar page={title} />
         {children}
       </main>
     </>

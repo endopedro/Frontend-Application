@@ -1,0 +1,28 @@
+.sidebar {
+  position: relative;
+  display: inline-block;
+  height: 100%;
+  width: 300px;
+  box-shadow: $shadow;
+  background-color: $white;
+
+  .nav {
+    display: flex;
+    flex-direction: column;
+
+    .nav-link {
+      padding: 0.75rem 2rem;
+      color: $primary;
+      font-weight: bold;
+      transition: 0.3s;
+      text-transform: uppercase;
+
+      &:hover,
+      &.active {
+        background-color: $primary;
+        color: $white;
+        box-shadow: $shadow;
+      }
+    }
+  }
+}

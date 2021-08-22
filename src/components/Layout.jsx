@@ -28,6 +28,7 @@ const Layout = ({ children, title }) => {
     <>
       <Head>
         <title>{title}</title>
+        <style>{`:root {--color-primary: ${config?.mainColor};}`}</style>
       </Head>
       <main>
         <Topbar />

@@ -2,6 +2,7 @@ import { useMemo } from 'react'
 import { configureStore } from '@reduxjs/toolkit'
 
 import configSlice from './config/slice'
+import productSlice from './product/slice'
 
 let store
 
@@ -9,6 +10,7 @@ const createStore = (preloadedState) => {
   return configureStore({
     reducer: {
       config: configSlice.reducer,
+      product: productSlice.reducer,
     },
     preloadedState,
   })

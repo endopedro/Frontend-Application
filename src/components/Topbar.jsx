@@ -1,4 +1,5 @@
 import React from 'react'
+import Image from 'next/image'
 import { useSelector } from 'react-redux'
 
 const Topbar = () => {
@@ -6,7 +7,7 @@ const Topbar = () => {
 
   return (
     <div className="topbar">
-      <img className="logo" src={logo} alt="logo" />
+      <Image className="logo" src={logo} alt="logo" width={200} height={28} />
     </div>
   )
 }

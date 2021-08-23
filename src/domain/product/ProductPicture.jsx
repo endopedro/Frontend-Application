@@ -1,9 +1,19 @@
 import React from 'react'
+import Image from 'next/image'
+import { useSelector } from 'react-redux'
 
-const ProductPicture = ({ picture }) => {
+const ProductPicture = () => {
+  const product = useSelector((state) => state.product.data)
+
   return (
     <div className="product-picture">
-      <img src={picture} alt="product picture" />
+      <Image
+        className="image"
+        src={product.picture}
+        alt="product picture"
+        height={220}
+        width={500}
+      />
     </div>
   )
 }

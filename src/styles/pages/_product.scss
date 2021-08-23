@@ -1,5 +1,8 @@
 .product-page {
+  padding: 1rem;
   display: flex;
+  overflow-y: auto;
+  width: 100%;
 
   .product-info {
     width: 100%;
@@ -10,3 +13,14 @@
     margin-left: 1rem;
   }
 } 
+
+@media (max-width: 576px) {
+  .product-page {
+    flex-wrap: wrap;
+
+    .side-info {
+      width: 100%;
+      margin-left: 0rem;
+    }
+  }
+}

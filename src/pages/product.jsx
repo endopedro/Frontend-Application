@@ -14,7 +14,7 @@ const ProductPage = () => {
   return (
     <Layout title="Product">
       {product ? (
-        <div className="page product-page">
+        <div className="product-page">
           <div className="product-info">
             <ProductPicture picture={product?.picture} />
             <ProductMainInfo name={product?.name} type={product?.type.name} />

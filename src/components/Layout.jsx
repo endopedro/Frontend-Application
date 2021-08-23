@@ -44,7 +44,7 @@ const Layout = ({ children, title }) => {
         <style>{`:root {--color-primary: ${config?.mainColor};}`}</style>
       </Head>
       <main>
-        <Topbar />
+        <Topbar page={title} />
         <div className="page">
           <Sidebar page={title} />
           {children}

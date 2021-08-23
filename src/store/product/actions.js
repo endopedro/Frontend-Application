@@ -23,6 +23,13 @@ export const fetchProductData = () => {
 
 export const updateProductData = (data) => {
   return async (dispatch) => {
+    dispatch(
+      uiActions.showNotification({
+        status: 'loading',
+        message: 'loading',
+      })
+    )
+
     await api()
       .updateProduct(6781, data)
       .then((response) => {

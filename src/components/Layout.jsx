@@ -25,7 +25,7 @@ const Layout = ({ children, title }) => {
   }, [dispatch])
 
   useEffect(() => {
-    if (notification) {
+    if (notification && notification.status != 'loading') {
       toast[notification.status](notification.message)
       dispatch(clearNofitication())
     }

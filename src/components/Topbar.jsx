@@ -1,5 +1,4 @@
 import React from 'react'
-import Image from 'next/image'
 import { useSelector } from 'react-redux'
 import MobileNav from './MobileNav'
 
@@ -8,7 +7,7 @@ const Topbar = ({ page }) => {
 
   return (
     <div className="topbar">
-      <Image className="logo" src={logo} alt="logo" width={200} height={28} />
+      <img className="logo" src={logo} alt="logo" />
       <MobileNav page={page} />
     </div>
   )

@@ -10,6 +10,7 @@ import ProductMap from '../domain/product/ProductMap'
 
 const ProductPage = () => {
   const product = useSelector((state) => state.product.data)
+  const config = useSelector((state) => state.config.data)
 
   return (
     <Layout title="Product">
@@ -21,7 +22,7 @@ const ProductPage = () => {
             <ProductContent />
           </div>
           <div className="side-info">
-            <ProductUser />
+            {config?.hasUserSection && <ProductUser />}
             <ProductMap />
           </div>
         </div>

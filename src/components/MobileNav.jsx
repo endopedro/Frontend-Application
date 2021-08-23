@@ -4,7 +4,7 @@ import { BiChevronDown } from 'react-icons/bi'
 import cx from 'classnames'
 import Nav from './Nav'
 
-const MobileNav = ({ page, blogName }) => (
+const MobileNav = ({ page }) => (
   <div className="mobile-nav">
     <Disclosure>
       {({ open }) => (

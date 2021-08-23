@@ -2,6 +2,7 @@ import React from 'react'
 import { Tab } from '@headlessui/react'
 import cx from 'classnames'
 import { useSelector } from 'react-redux'
+import DOMPurify from 'dompurify'
 
 import Card from '../../../components/Card'
 import Attributes from './Attributes'
@@ -23,7 +24,11 @@ const ProductContent = () => {
           </Tab.List>
           <Tab.Panels>
             <Tab.Panel as="div" className="tab-content">
-              <div dangerouslySetInnerHTML={{ __html: product.description }} />
+              <div
+                dangerouslySetInnerHTML={{
+                  __html: DOMPurify.sanitize(product.description),
+                }}
+              />
             </Tab.Panel>
             <Tab.Panel as="div" className="tab-content">
               <Attributes />

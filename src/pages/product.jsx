@@ -16,13 +16,13 @@ const ProductPage = () => {
       {product ? (
         <div className="product-page">
           <div className="product-info">
-            <ProductPicture picture={product?.picture} />
-            <ProductMainInfo name={product?.name} type={product?.type.name} />
-            <ProductContent {...product} />
+            <ProductPicture />
+            <ProductMainInfo />
+            <ProductContent />
           </div>
           <div className="side-info">
-            <ProductUser user={product?.user} company={product?.company} />
-            <ProductMap company={product?.company} />
+            <ProductUser />
+            <ProductMap />
           </div>
         </div>
       ) : (

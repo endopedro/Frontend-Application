@@ -1,14 +1,17 @@
 import React from 'react'
+import { useSelector } from 'react-redux'
 import { Map, Marker, GoogleApiWrapper } from 'google-maps-react'
 
-const MapContainer = ({ google, address }) => {
+const MapContainer = ({ google }) => {
+  const product = useSelector((state) => state.product.data)
+
   return (
     <Map
       google={google}
       zoom={10}
       initialCenter={{
-        lat: address.latitude,
-        lng: address.longitude,
+        lat: product.company.address.latitude,
+        lng: product.company.address.longitude,
       }}
       zoomControl={false}
       mapTypeControl={false}
@@ -20,7 +23,10 @@ const MapContainer = ({ google, address }) => {
     >
       <Marker
         name={'Current location'}
-        position={{ lat: address.latitude, lng: address.longitude }}
+        position={{
+          lat: product.company.address.latitude,
+          lng: product.company.address.longitude,
+        }}
       />
     </Map>
   )

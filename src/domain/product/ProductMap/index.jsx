@@ -3,11 +3,11 @@ import React from 'react'
 import Card from '../../../components/Card'
 import Map from './Map'
 
-const ProductMap = ({ company }) => {
+const ProductMap = () => {
   return (
     <Card title="Map">
       <div className="map">
-        <Map address={company?.address} />
+        <Map />
       </div>
     </Card>
   )

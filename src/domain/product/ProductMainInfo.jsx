@@ -1,11 +1,15 @@
 import React from 'react'
+import { useSelector } from 'react-redux'
+
 import Card from '../../components/Card'
 
-const ProductMainInfo = ({ name, type }) => {
+const ProductMainInfo = () => {
+  const product = useSelector((state) => state.product.data)
+
   return (
     <Card title="Product">
-      <h2>{name}</h2>
-      <span className="text-small">{type}</span>
+      <h2>{product.name}</h2>
+      <span className="text-small">{product.type.name}</span>
     </Card>
   )
 }

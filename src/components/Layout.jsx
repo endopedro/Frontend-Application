@@ -23,10 +23,6 @@ const Layout = ({ children, title }) => {
     if (!product) dispatch(fetchProductData())
     if (!trl) dispatch(fetchTrlData())
   }, [dispatch])
-  console.log(config)
-  console.log(product)
-  console.log(trl)
-  console.log(notification)
 
   useEffect(() => {
     if (notification) {

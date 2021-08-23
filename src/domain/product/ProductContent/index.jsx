@@ -1,11 +1,14 @@
 import React from 'react'
 import { Tab } from '@headlessui/react'
 import cx from 'classnames'
+import { useSelector } from 'react-redux'
 
 import Card from '../../../components/Card'
 import Attributes from './Attributes'
 
-const ProductContent = ({ categories, businessModels, description, trl }) => {
+const ProductContent = () => {
+  const product = useSelector((state) => state.product.data)
+
   return (
     <Card>
       <div className="content">
@@ -20,14 +23,10 @@ const ProductContent = ({ categories, businessModels, description, trl }) => {
           </Tab.List>
           <Tab.Panels>
             <Tab.Panel as="div" className="tab-content">
-              <div dangerouslySetInnerHTML={{ __html: description }} />
+              <div dangerouslySetInnerHTML={{ __html: product.description }} />
             </Tab.Panel>
             <Tab.Panel as="div" className="tab-content">
-              <Attributes
-                categories={categories}
-                businessModels={businessModels}
-                trl={trl}
-              />
+              <Attributes />
             </Tab.Panel>
           </Tab.Panels>
         </Tab.Group>

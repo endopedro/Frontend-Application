@@ -6,6 +6,13 @@ export const fetchTrlData = () => {
     await api()
       .getTrl()
       .then((response) => dispatch(trlActions.setTrl({ data: response.data })))
-      .catch((error) => console.log(error))
+      .catch((error) => {
+        dispatch(
+          uiActions.showNotification({
+            status: 'error',
+            message: 'No Connection',
+          })
+        )
+      })
   }
 }

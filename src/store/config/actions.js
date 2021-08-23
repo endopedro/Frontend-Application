@@ -10,6 +10,13 @@ export const fetchConfigData = () => {
       .then((response) =>
         dispatch(configActions.setConfig({ data: response.data }))
       )
-      .catch((error) => console.log(error))
+      .catch((error) => {
+        dispatch(
+          uiActions.showNotification({
+            status: 'error',
+            message: 'No Connection',
+          })
+        )
+      })
   }
 }

@@ -1,14 +1,19 @@
 import React from 'react'
-import { useSelector } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
 import { useForm } from 'react-hook-form'
+import { productActions } from '../../../store/product/slice'
+import { updateProductData } from '../../../store/product/actions'
 
 const Attributes = ({ setEdit }) => {
+  const dispatch = useDispatch()
   const trls = useSelector((state) => state.trl.data)
   const product = useSelector((state) => state.product.data)
 
   const { register, handleSubmit } = useForm()
 
-  const onSubmit = (data) => console.log(data)
+  const onSubmit = (data) => {
+    dispatch(updateProductData(data))
+  }
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>

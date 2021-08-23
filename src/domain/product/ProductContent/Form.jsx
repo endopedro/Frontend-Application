@@ -1,9 +1,9 @@
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { useForm } from 'react-hook-form'
-import { productActions } from '../../../store/product/slice'
 import { updateProductData } from '../../../store/product/actions'
 import LoadingSpin from '../../../components/LoadingSpin'
+import { BiMinusCircle, BiPlusCircle } from 'react-icons/bi'
 
 const Attributes = ({ setEdit }) => {
   const dispatch = useDispatch()
@@ -11,11 +11,29 @@ const Attributes = ({ setEdit }) => {
   const product = useSelector((state) => state.product.data)
   const notification = useSelector((state) => state.ui.notification)
 
-  const { register, handleSubmit } = useForm()
+  const { register, handleSubmit, watch, setValue, getValues } = useForm({
+    defaultValues: {
+      categories: product.categories.map((cat) => cat.name),
+      business_models: product.businessModels.map((model) => model.name),
+    },
+  })
 
-  const onSubmit = (data) => {
-    dispatch(updateProductData(data))
+  const watchCategories = watch('categories')
+  const watchModels = watch('business_models')
+
+  const addField = (field) => {
+    const newArray = [...getValues(field)]
+    newArray.push('')
+    setValue(field, newArray)
   }
+
+  const removeField = (field, index) => {
+    const newArray = [...getValues(field)]
+    newArray.splice(index, 1)
+    setValue(field, [...newArray])
+  }
+
+  const onSubmit = (data) => dispatch(updateProductData(data))
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} style={{ position: 'relative' }}>
@@ -23,28 +41,50 @@ const Attributes = ({ setEdit }) => {
       <div className="information">
         <span className="label">Categories:</span>
         <span className="text">
-          {product.categories.map((cat, i) => (
-            <input
-              key={i}
-              type="text"
-              defaultValue={cat.name}
-              {...register(`categories[${i}]`)}
-            />
+          {watchCategories?.map((cat, i) => (
+            <div className="fields" key={i}>
+              <input
+                type="text"
+                defaultValue={cat.name}
+                {...register(`categories[${i}]`)}
+              />
+              <BiMinusCircle
+                size={28}
+                className="icon"
+                onClick={() => removeField('categories', i)}
+              />
+            </div>
           ))}
         </span>
+        <BiPlusCircle
+          size={28}
+          className="icon"
+          onClick={() => addField('categories')}
+        />
       </div>
       <div className="information">
         <span className="label">Business Models:</span>
         <span className="text">
-          {product.businessModels.map((model, i) => (
-            <input
-              key={i}
-              type="text"
-              defaultValue={model.name}
-              {...register(`business_models[${i}]`)}
-            />
+          {watchModels?.map((model, i) => (
+            <div className="fields" key={i}>
+              <input
+                type="text"
+                defaultValue={model.name}
+                {...register(`business_models[${i}]`)}
+              />
+              <BiMinusCircle
+                size={28}
+                className="icon"
+                onClick={() => removeField('business_models', i)}
+              />
+            </div>
           ))}
         </span>
+        <BiPlusCircle
+          size={28}
+          className="icon"
+          onClick={() => addField('business_models')}
+        />
       </div>
       <div className="information">
         <span className="label">TRL:</span>
@@ -57,14 +97,10 @@ const Attributes = ({ setEdit }) => {
         </select>
       </div>
       <div className="footer">
-        <button className="btn cancel" onClick={() => setEdit(false)}>
+        <div className="btn cancel" onClick={() => setEdit(false)}>
           Cancel
-        </button>
-        <button
-          className="btn primary"
-          // onClick={() => setEdit(false)}
-          type="submit"
-        >
+        </div>
+        <button className="btn primary" type="submit">
           Save
         </button>
       </div>

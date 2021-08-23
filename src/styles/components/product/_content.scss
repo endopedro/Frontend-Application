@@ -12,6 +12,18 @@
     &:not(:last-child) {
       margin-bottom: 0.5rem;
     }
+
+    .fields {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .icon {
+      color: $primary;
+      margin-left: 0.5rem;
+      cursor: pointer;
+    }
   }
 
   .footer {

@@ -3,7 +3,8 @@
   border-top: $primary 5px solid;
   box-shadow: $shadow;
   padding: $padding;
-  position: relative;
+  position: fixed;
+  width: 100%;
   text-align: left;
   z-index: 1;
 
@@ -15,7 +16,7 @@
 @media (max-width: 992px) {
   .topbar {
     text-align: center;
-    padding: $padding-sm;
+    padding: 0.75rem 0;
 
     .logo {
       height: 1.5rem;

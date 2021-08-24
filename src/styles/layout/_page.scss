@@ -3,4 +3,12 @@
   height: calc(100vh - 70px);
   width: 100%;
   display: flex;
+  padding-top: 70px;
+}
+
+@media (max-width: 992px) {
+  .page {
+    padding-top: 58px;
+    height: calc(100vh - 58px);
+  }
 }
